@@ -1,0 +1,62 @@
+rules:
+    - id: Check_For_Test_2a
+      patterns:
+        - pattern-inside: |
+            @Test
+            public void shouldAddOwner() {
+              ...
+            }
+      message: Semgrep found a match
+      languages: [ java ]
+      severity: WARNING
+    - id: Check_for_DTO_2a
+      patterns:
+        - pattern: |
+            public void shouldAddOwner() {
+              ...
+              OwnerDTO $VAR = ...;
+              ...
+            }
+      message: Semgrep found a match
+      languages: [ java ]
+      severity: WARNING
+    - id: Check_for_Controller_Method_2a
+      patterns:
+        - pattern: |
+            public void shouldAddOwner() {
+              ...
+              ... ownerController.addOwner(...);
+              ...
+            }
+      message: Semgrep found a match
+      languages: [ java ]
+      severity: WARNING
+    - id: Check_for_Service_Method_2a
+      patterns:
+          - pattern: |
+              public void shouldAddOwner() {
+              ...
+              ... ownerService.addOwner(...);
+              ...
+              }
+      message: Semgrep found a match
+      languages: [ java ]
+      severity: WARNING
+    - id: Check_for_Syntax_Order_2a
+      patterns:
+          - pattern: |
+              public void shouldAddOwner() {
+                ...
+                when(...).thenReturn(...);
+                ...
+                verify(...);
+                ...
+              }
+      message: Semgrep found a match
+      languages: [ java ]
+      severity: WARNING
+
+
+
+
+

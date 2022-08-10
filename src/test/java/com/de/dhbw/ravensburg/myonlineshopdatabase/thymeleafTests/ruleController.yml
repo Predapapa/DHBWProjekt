@@ -1,0 +1,15 @@
+rules:
+  - id: checkIfExists
+    pattern: String main()
+    message: Semgrep found a match
+    languages: [java]
+    severity: WARNING
+
+  - id: checkStringReturn
+    pattern: |
+      public $V $M() {
+        return "main";
+      }
+    message: Semgrep found a match
+    languages: [java]
+    severity: WARNING

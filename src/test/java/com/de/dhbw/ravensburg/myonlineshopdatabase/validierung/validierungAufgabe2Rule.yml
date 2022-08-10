@@ -1,0 +1,108 @@
+rules:
+  - id: Check_For_NotNullAnnotation_For_Price
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotNull
+          private Float price;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_Min(1)Annotation_For_Price
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Min(1)
+          private Float price;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_DigitsAnnotation_For_Price
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Digits(...)
+          private Float price;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_CorrectDigitsAnnotation_For_Price
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Digits(integer=7, fraction=0)
+          private Float price;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_NotNullAnnotation_For_Currency
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotNull
+          private String currency;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_PatternRegexpAnnotation_For_Currency
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Pattern(regexp="^(EUR)*$")
+          private String currency;
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_NotNullAnnotation_For_NumberOfOwners
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotNull
+          private Integer number_of_owners;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_Min(1)Annotation_For_NumberOfOwners
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Min(1)
+          private Integer number_of_owners;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_NotNullAnnotation_For_OwnerDTO
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotNull
+          private OwnerDTO owner;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING

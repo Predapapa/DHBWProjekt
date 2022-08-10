@@ -1,0 +1,7 @@
+rules:
+  - id: CHECK_FOR_INSERT
+    pattern: |
+      <$X ... th:insert="fragments/navbar :: navbar" ...>
+    message: Semgrep found a match
+    languages: [html]
+    severity: WARNING

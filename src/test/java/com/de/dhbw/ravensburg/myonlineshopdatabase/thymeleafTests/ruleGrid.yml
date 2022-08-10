@@ -1,0 +1,15 @@
+rules:
+  - id: CHECK_FOR_TH_EACH_AND_TEXT
+    patterns:
+      - pattern: <$Y ... th:text=...>...</$Y>
+      - pattern-inside: <$X ... th:each=$VAL>...</$X>
+    message: Semgrep found a match
+    languages: [ html ]
+    severity: WARNING
+  - id: CHECK_FOR_TH_EACH_AND_ATTR
+    patterns:
+      - pattern: <$Y ... th:attr=...>...</$Y>
+      - pattern-inside: <$X ... th:each=$VAL>...</$X>
+    message: Semgrep found a match
+    languages: [ html ]
+    severity: WARNING
