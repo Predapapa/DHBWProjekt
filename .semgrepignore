@@ -1,0 +1,37 @@
+# Ignore git items
+.gitignore
+.git/
+:include .gitignore
+
+# Common large paths
+node_modules/
+build/
+dist/
+vendor/
+.env/
+.venv/
+.tox/
+*.min.js
+
+# Common test paths
+*_test.go
+
+# Semgrep rules folder
+.semgrep
+
+# Semgrep-action log folder
+.semgrep_logs/
+
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/thymeleafTests/ruleGrid.yml src/main/resources/templates/fragments/grid.html
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/thymeleafTests/ruleMain.yml src/main/resources/templates/main.html
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/thymeleafTests/ruleController.yml src/main/java/com/de/dhbw/ravensburg/myonlineshopdatabase/controller/ThCarControllerImpl.java
+
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/RestTests/aufgabe2/ruleAddOwner.yml src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/RestController/OwnerRestControllerUTTest.java
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/RestTests/aufgabe2/ruleGetOwner.yml src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/RestController/OwnerRestControllerUTTest.java
+
+
+# Semgrep befehl aufgabe1
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/validierung/validierungAufgabe1Rule.yml src/main/java/com/de/dhbw/ravensburg/myonlineshopdatabase/dto/CarDTO.java
+
+# Semgrep befehl aufgabe2
+docker run -v "${PWD}:/src" returntocorp/semgrep semgrep --config=src/test/java/com/de/dhbw/ravensburg/myonlineshopdatabase/validierung/validierungAufgabe2Rule.yml src/main/java/com/de/dhbw/ravensburg/myonlineshopdatabase/dto/CarDTO.java
