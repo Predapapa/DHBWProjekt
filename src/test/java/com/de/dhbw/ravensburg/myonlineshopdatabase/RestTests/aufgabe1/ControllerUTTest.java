@@ -35,16 +35,10 @@ public class ControllerUTTest {
         ownerDTO.setId(1l);
     }
 
-    /**
-     * Testet, ob die Methode als RestController agiert (@GetMapping)
-     * @throws Exception
-     */
     @Test
     public void getOwnerfromURL() throws Exception {
 
-        //act
         ResponseEntity<OwnerDTO> response = restTemplate.getForEntity("/api/v1/owners/1", OwnerDTO.class);
-        //System.out.println(response);
 
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertEquals(ownerDTO.getName(), response.getBody().getName());
@@ -52,11 +46,4 @@ public class ControllerUTTest {
 
     }
 
-    /**
-     * Idee für nicht berarbeiten
-     */
-    //Stoppen
-    //icacls testpermission.java /inheritance:r
-    //Zurücksetzen
-   // icacls testpermission.java /inheritance:e
 }
