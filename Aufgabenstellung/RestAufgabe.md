@@ -13,5 +13,5 @@ Erstellen Sie die Methode **getOwner** in dem RestController **OwnerController**
 
 1.  Verfassen Sie einen statischen Unit Test zur OwnerControllerImpl Methode addOwner. Die Testmethode soll den Namen **shouldAddOwner** haben. Diese Methode soll in der Datei **OwnerRestControllerTestUT** hinzugefügt werden.
 
-2.  Schauen Sie sich die Methode getOwnerCarPrice() im **OwnerControllerImpl** an. Verändern Sie die Testmethode **shouldSuccessfullyGetOwnerCarPrice()** in der **OwnerRestControllerTestImpl**, damit der Test erfolgreich durchläuft und Methode korrekt testet.
+2.  Schauen Sie sich die Methode getOwnerCarPrice() im **OwnerControllerImpl** an. Verändern Sie die Testmethode **shouldSuccessfullyGetOwnerCarPrice()** in der **OwnerRestControllerTestImpl**, damit der Test erfolgreich durchläuft und die Testmethode korrekt testet.
 
