@@ -19,6 +19,6 @@ b)  Erweitern Sie die „main.html" Datei, indem sie das Fragment **„navbar" e
 **Anhang**
 
 Abb. 1.1
-![](media/image2.jpg)
+![](media/image2.png)
 Abb. 1.2
 ![](media/table.jpg)
