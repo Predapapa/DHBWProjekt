@@ -1,0 +1,85 @@
+rules:
+  - id: Check_For_NotBlankAnnotation_For_Brand
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotBlank
+          private String brand;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_PatternRegexpAnnotation_For_Brand
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Pattern(regexp="^[\\p{L} .'-]+$")
+          private String brand;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_NotBlankAnnotation_For_Model
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @NotBlank
+          private String model;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_Min(1)Annotation_For_km
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Min(1)
+          private Integer km;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_RangeAnnotation_For_YearOfProduction
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Range(...)
+          private Integer year_of_production;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_RangeMinMaxAnnotation_For_YearOfProduction
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Range(min=1902, max=2022)
+          private Integer year_of_production;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_For_PatternRegexpAnnotation_For_Fuel
+    patterns:
+      - pattern: |
+          public class CarDTO {
+          ...
+          @Pattern(regexp="^(BENZIN|DIESEL)*$")
+          private String fuel;
+          ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING

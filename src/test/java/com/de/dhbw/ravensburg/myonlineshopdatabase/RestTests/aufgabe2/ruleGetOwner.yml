@@ -1,0 +1,51 @@
+rules:
+  - id: Check_for_ID_2b
+    patterns:
+      - pattern: |
+          @Test
+          public void shouldSuccessfullyGetOwnerCarPrice() {
+          ...
+          when(ownerService.$FUNCS($ID)).thenReturn(...);
+          ...
+          ... ownerController.$FUNCC($ID);
+          ...
+          verify(...).$FUNCV($ID);
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_for_Methods_2b
+    patterns:
+      - pattern: |
+          @Test
+          public void shouldSuccessfullyGetOwnerCarPrice() {
+            ...
+            when($SERVICE.getOwnerCarPrice(...)).thenReturn(...);
+            ...
+            ... $CONTROLLER.getOwnerCarPrice(...);
+            ...
+            verify($SERVICE).getOwnerCarPrice(...);
+            ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING
+  - id: Check_for_Sum_2b
+    patterns:
+      - pattern-either:
+          - pattern: assertEquals($SUM, ...);
+          - pattern: assertEquals(..., $SUM);
+          - pattern: assertTrue($SUM == $RESULT);
+          - pattern: assertTrue($RESULT == $SUM);
+          - pattern: assert($SUM == $RESULT);
+          - pattern: assert($RESULT == $SUM);
+      - pattern-inside: |
+          @Test
+          public void shouldSuccessfullyGetOwnerCarPrice() {
+              ...
+              when(...).thenReturn($SUM);
+              ...
+          }
+    message: Semgrep found a match
+    languages: [ java ]
+    severity: WARNING

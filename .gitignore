@@ -4,6 +4,16 @@ target/
 !**/src/main/**/target/
 !**/src/test/**/target/
 
+maven-test-results.txt
+results.txt
+scan_results_AddOwner.vim
+scan_results_CarDTO1.vim
+scan_results_CarDTO2.vim
+scan_results_GetOwner.vim
+scan_results_gridHTML.vim
+scan_results_mainHTML.vim
+scan_results_ThControllerImpl.vim
+
 ### STS ###
 .apt_generated
 .classpath
