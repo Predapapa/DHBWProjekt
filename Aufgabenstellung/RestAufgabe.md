@@ -4,7 +4,7 @@
 
 Erstellen Sie die Methode **getOwner** in dem RestController **OwnerController**.
 
-1. Kreieren Sie hierfür eine Methode in **OwnerService**, welche einen neuen Owner in dem Repository speichert. Der RestController soll die Service-Methode aufrufen.
+1. Kreieren Sie hierfür eine Methode in **OwnerService**, welche einen bestehenden Owner anhand der ID aus dem Repository zurückgibt. Der RestController soll die Service-Methode aufrufen.
 
 2.  Falls der Owner nicht gefunden werden sollte (NoSuchElementException), soll eine **HttpStatus.NOT_FOUND** (ResponseStatusException) Exception geworfen werden.
 
