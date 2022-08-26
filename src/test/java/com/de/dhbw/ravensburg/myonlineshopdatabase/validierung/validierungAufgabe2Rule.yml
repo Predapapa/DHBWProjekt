@@ -40,7 +40,7 @@ rules:
       - pattern: |
           public class CarDTO {
           ...
-          @Digits(integer=7, fraction=0)
+          @Digits(integer=5, fraction=0)
           private Float price;
           ...
           }
