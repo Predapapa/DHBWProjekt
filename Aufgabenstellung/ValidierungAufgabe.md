@@ -60,7 +60,12 @@ Bearbeiten Sie die Klasse **CarDTO.java**, sodass beim Anlegen eines Autos das i
   </tr>
   <tr>
     <td>price</td>
-    <td>25694</td>
+    <td>11252365</td>
+    <td>Fehlermeldung</td>
+  </tr>
+  <tr>
+    <td>price</td>
+    <td>2555694</td>
     <td>Erfolg</td>
   </tr>
   <tr>
